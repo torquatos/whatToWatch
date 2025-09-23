@@ -47,3 +47,10 @@ def index():
 
         medias = mediaToWatch.query.all()
         return render_template('index.html', medias=medias)
+
+@app.route('/deleteItem/<int:id>')
+def deleteItem(id):
+    mediaDelete = mediaToWatch.query.get_or_404(id)
+    db.session.delete(mediaDelete)
+    db.session.commit()
+    return redirect(url_for('index'))
