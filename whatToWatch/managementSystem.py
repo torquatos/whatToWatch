@@ -30,12 +30,20 @@ with app.app_context():
 
 def index():
     if request.method == 'POST':
-         nameOfMedia = request.form[]
-        typeOfMedia = request.form[]
-        genre =request.form[]
-        year = request.form[]
-        seasons = request.form[]
-        concluded = request.form[]
-        whereToWatch =request.form[]
-        wasWatched = request.form[]
-        sinopse = request.form[]
+        nameOfMedia = request.form[nameOfMedia]
+        typeOfMedia = request.form[typeOfMedia]
+        genre =request.form[genre]
+        year = request.form[year]
+        seasons = request.form[seasons]
+        concluded = request.form[concluded]
+        whereToWatch =request.form[whereToWatch]
+        wasWatched = request.form[wasWatched]
+        sinopse = request.form[sinopse]
+
+        new_media = mediaToWatch(nameOfMedia=nameOfMedia, typeOfMedia=typeOfMedia, genre=genre, year=year, seasons=seasons, concluded=concluded, whereToWatch=whereToWatch, wasWatched=wasWatched, sinopse=sinopse)
+        db.session.add(new_media)
+        db.session.commit()
+        return redirect(url_for('index'))
+
+        medias = mediaToWatch.query.all()
+        return render_template('index.html', medias=medias)
