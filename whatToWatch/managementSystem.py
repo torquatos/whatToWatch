@@ -11,11 +11,11 @@ db = SQLAlchemy(app)
 class mediaToWatch(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     nameOfMedia = db.Column(db.String(100), nullable = False)
-    typeOfMedia = db.Column
-    genre = db.Column
-    year = db.Column
-    seasons = db.Column
-    concluded = db.Column
-    whereToWatch = db.Column
-    wasWatched = db.Column
-    sinopse = db.Column
+    typeOfMedia = db.Column(db.String(100))
+    genre = db.Column(db.String(100))
+    year = db.Column(db.Integer(4))
+    seasons = db.Column(db.Integer(2))
+    concluded = db.Column(db.Boolean)
+    whereToWatch = db.Column(db.String(100))
+    wasWatched = db.Column(db.Boolean)
+    sinopse = db.Column(db.Text, nullable = False)
