@@ -25,3 +25,17 @@ class mediaToWatch(db.Model):
 
 with app.app_context():
     db.create_all()
+
+@app.route('/', methods=['GET', 'POST'])
+
+def index():
+    if request.method == 'POST':
+         nameOfMedia = request.form[]
+        typeOfMedia = request.form[]
+        genre =request.form[]
+        year = request.form[]
+        seasons = request.form[]
+        concluded = request.form[]
+        whereToWatch =request.form[]
+        wasWatched = request.form[]
+        sinopse = request.form[]
