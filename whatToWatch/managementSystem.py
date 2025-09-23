@@ -11,11 +11,17 @@ db = SQLAlchemy(app)
 class mediaToWatch(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     nameOfMedia = db.Column(db.String(100), nullable = False)
-    typeOfMedia = db.Column(db.String(100))
-    genre = db.Column(db.String(100))
-    year = db.Column(db.Integer(4))
-    seasons = db.Column(db.Integer(2))
-    concluded = db.Column(db.Boolean)
-    whereToWatch = db.Column(db.String(100))
-    wasWatched = db.Column(db.Boolean)
-    sinopse = db.Column(db.Text, nullable = False)
+    typeOfMedia = db.Column(db.String(100), nullable = False)
+    genre = db.Column(db.String(100), nullable = True)
+    year = db.Column(db.Integer(4), nullable = True)
+    seasons = db.Column(db.Integer(2), nullable = True)
+    concluded = db.Column(db.Boolean(False), nullable = False)
+    whereToWatch = db.Column(db.String(100), nullable = False)
+    wasWatched = db.Column(db.Boolean(False), nullable = False)
+    sinopse = db.Column(db.Text, nullable = True)
+
+    def __repr__(self):
+        return f'<mediaToWatch {self.nameOfMedia}>'
+
+with app.app_context():
+    db.create_all()
