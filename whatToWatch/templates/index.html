@@ -5,7 +5,28 @@
     <meta name = "viewport" content = "width=devide=width, initial-scale=1.0">
     <title>Media To Watch</title>
     <style>
-        
+
     </style>
 </head>
+
+<body>
+
+    <div class="container">
+        <h1>Enrolling the Medias to Watch</h1>
+
+        <form method="POST" action="{{url_for('index')}}">
+
+            <div>
+                <label for="nameOfMedia">Name: </label>
+                <input type="text" id="nameOfMedia" name="nameOfMedia" required>
+            </div>
+
+            <div>
+                <label for="typeOfMedia">Type (movie, video, series...): </label>
+                <input type="text" id="typeOfMedia" name="typeOfMedia" required>
+            </div>
+
+        </form>
+    </div>
+</body>
 </html>
