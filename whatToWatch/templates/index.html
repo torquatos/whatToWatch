@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name = "viewport" content = "width=devide-width, initial-scale=1.0">
@@ -68,7 +68,7 @@
 
         <h2>Medias Enrolled</h2>
 
-        {% if mediaToWatch %}
+        {% if medias %}
         <table>
 
             <thead>
@@ -87,7 +87,7 @@
 
             <tbody>
 
-                {% for media in mediaToWatch %}
+                {% for media in medias %}
 
                 <tr>
                     <td>{{media.nameOfMedia}}</td>

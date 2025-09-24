@@ -30,23 +30,29 @@ with app.app_context():
 
 def index():
     if request.method == 'POST':
-        nameOfMedia = request.form[nameOfMedia]
-        typeOfMedia = request.form[typeOfMedia]
-        genre =request.form[genre]
-        year = request.form[year]
-        seasons = request.form[seasons]
-        concluded = request.form[concluded]
-        whereToWatch =request.form[whereToWatch]
-        wasWatched = request.form[wasWatched]
-        sinopse = request.form[sinopse]
+        nameOfMedia = request.form['nameOfMedia']
+        typeOfMedia = request.form['typeOfMedia']
+        genre =request.form.get('genre')
+        year_str = request.form.get('year')
+        seasons_str = request.form.get('seasons')
+        concluded = request.form.get('concluded', False)
+        whereToWatch =request.form['whereToWatch']
+        wasWatched = request.form.get('wasWatched', False)
+        sinopse = request.form.get('sinopse')
+
+        concluded='concluded' in request.form
+        wasWatched='wasWatched' in request.form
+
+        year = int(year_str) if year_str and year_str.isdigit() else None
+        seasons = int(seasons_str) if seasons_str and seasons_str.isdigit() else None
 
         new_media = mediaToWatch(nameOfMedia=nameOfMedia, typeOfMedia=typeOfMedia, genre=genre, year=year, seasons=seasons, concluded=concluded, whereToWatch=whereToWatch, wasWatched=wasWatched, sinopse=sinopse)
         db.session.add(new_media)
         db.session.commit()
         return redirect(url_for('index'))
 
-        medias = mediaToWatch.query.all()
-        return render_template('index.html', medias=medias)
+    medias = mediaToWatch.query.all()
+    return render_template('index.html', medias=medias)
 
 @app.route('/deleteItem/<int:id>')
 def deleteItem(id):
