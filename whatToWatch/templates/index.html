@@ -61,7 +61,35 @@
                 <textarea id="sinopse" name="sinopse" ></textarea>
             </div>
 
+            <button type="submit">Add Media</button>
         </form>
+
+        <hr>
+
+        <h2>Medias Enrolled</h2>
+
+        {% if medias %}
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Type</th>
+                    <th>Genre</th>
+                    <th>Year</th>
+                    <th>Seasons</th>
+                    <th>Concluded</th>
+                    <th>Watch on</th>
+                    <th>Already Watched</th>
+                    <th>Sinopse</th>
+                </tr>
+            </thead>
+
+            <tbody></tbody>
+
+        </table>
+
+        
     </div>
 </body>
 </html>
