@@ -68,7 +68,7 @@
 
         <h2>Medias Enrolled</h2>
 
-        {% if medias %}
+        {% if mediaToWatch %}
         <table>
 
             <thead>
@@ -87,7 +87,7 @@
 
             <tbody>
 
-                {% for media in medias %}
+                {% for media in mediaToWatch %}
 
                 <tr>
                     <td>{{media.nameOfMedia}}</td>
