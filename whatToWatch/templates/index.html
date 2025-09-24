@@ -85,11 +85,35 @@
                 </tr>
             </thead>
 
-            <tbody></tbody>
+            <tbody>
+
+                {% for media in medias %}
+
+                <tr>
+                    <td>{{media.nameOfMedia}}</td>
+                    <td>{{media.typeOfMedia}}</td>
+                    <td>{{media.genre}}</td>
+                    <td>{{media.year}}</td>
+                    <td>{{media.seasons}}</td>
+                    <td>{{media.concluded}}</td>
+                    <td>{{media.whereToWatch}}</td>
+                    <td>{{media.wasWatched}}</td>
+                    <td>{{media.sinopse}}</td>
+                    <td>
+                        <a href="{{ url_for('deleteItem', id=media.id)}}" class="delete-btn">Delete</a>
+                    </td>
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
 
         </table>
 
-        
+        {% else %}
+        <p>There is no media registered yet</p>
+        {% endif %}
+
     </div>
 </body>
 </html>
