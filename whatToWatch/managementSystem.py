@@ -15,9 +15,9 @@ class mediaToWatch(db.Model):
     genre = db.Column(db.String(100), nullable = True)
     year = db.Column(db.Integer, nullable = True)
     seasons = db.Column(db.Integer, nullable = True)
-    concluded = db.Column(db.Boolean(False), nullable = False)
+    concluded = db.Column(db.Boolean(False), nullable = True)
     whereToWatch = db.Column(db.String(100), nullable = False)
-    wasWatched = db.Column(db.Boolean(False), nullable = False)
+    wasWatched = db.Column(db.Boolean(False), nullable = True)
     sinopse = db.Column(db.Text, nullable = True)
 
     def __repr__(self):
