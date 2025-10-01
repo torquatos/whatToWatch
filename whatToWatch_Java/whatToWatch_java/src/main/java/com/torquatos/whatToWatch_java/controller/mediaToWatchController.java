@@ -36,4 +36,14 @@ public class mediaToWatchController{
 		repository.deleteById(id);
 		return ResponseEntity.noContent().build();
 	}
+	
+	@PutMapping("/{id}/toggle-watched")
+	public ResponseEntity<mediaToWatch> toggleWatched(@PathVariable Long id){
+		return repository.findById(id)
+				.map(media -> {
+					media.setWasWatched(!media.getWasWatched());
+					return ResponseEntity.ok(repository.save(media));
+				})
+				.orElseGet(()-> ResponseEntity.notFound().build());
+	}
 }
