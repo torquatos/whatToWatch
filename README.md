@@ -14,3 +14,10 @@ Reinforcing concepts:
                 Controller: controller API REST - it manages the endpoints HTTP so Vue.js can interact
                 Entity: model of data - it's a model for the data that will map the table of the database
                 Repo: repository JPA - an interface that inherits the JPARepository so it can obtain the methods CRUD already done
+
+        Lombok: it is used to generate the setter and getters, standart constructor and the constructor with the other args
+            import 
+                lombok.Getter
+                lombor.Setter
+                lombok.NoArgsConstructor
+                lombok.AllArgsConstructor
