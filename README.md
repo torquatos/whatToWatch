@@ -21,3 +21,6 @@ Reinforcing concepts:
                 lombor.Setter
                 lombok.NoArgsConstructor
                 lombok.AllArgsConstructor
+
+Backend - Java Spring Boot - Maven
+    REST service that will treat the database (Spring Data JPA will be used here to the access and management of the data and consequently the databank)
