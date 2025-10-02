@@ -7,8 +7,8 @@ import lombok.*;
 
 @Entity
 @Data
-@Getter
-@Setter
+//@Getter
+//@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 
@@ -31,5 +31,25 @@ public class mediaToWatch{
 	
 	@Lob
 	private String sinopse;
+
+	public boolean getConcluded() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean getIsWatched() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public void setConcluded(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setIsWatched(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
