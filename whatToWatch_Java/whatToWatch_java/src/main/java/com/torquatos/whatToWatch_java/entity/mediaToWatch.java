@@ -6,10 +6,13 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
+@Data
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+
+@Table(name = "mediaToWatch")
 
 public class mediaToWatch{
 	
@@ -24,7 +27,9 @@ public class mediaToWatch{
 	private Integer seasons;
 	private Boolean conclude = false;
 	private String whereToWatch;
-	private Boolean wasWatched = false;
+	private Boolean isWatched = false;
+	
+	@Lob
 	private String sinopse;
 	
 }
