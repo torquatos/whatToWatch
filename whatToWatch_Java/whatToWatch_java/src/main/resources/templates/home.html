@@ -52,6 +52,28 @@
         <div v-if="loading" class="text-center text-xl text-blue-500 mt-12">Loading Data...</div>
         <div v-else class="max-w-4x1 mx-auto">
 			<!-- Add Media Form -->
+			<div class="bg-white p-6 rounded-xl shadow-lg mb-8">
+				
+				<h2 class="text-2x1 font-semibold mb-4 text-gray-800">Add New Media</h2>
+				<form @submit.prevent="addMedia" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+					
+					<input
+						v-model="newMedia.title"
+						type="text"
+						placeholder="Media Title"
+						required
+						class="p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+					
+					<input
+						v-model="newMedia.category"
+						type="text"
+						placeholder="Media Category"
+						required
+						class="p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+					
+				
+				</form>
+			</div>
 		</div>
     </body>
 </html>
