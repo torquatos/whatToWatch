@@ -131,6 +131,20 @@
 					(<span class="font-bold text-red-500">{{pendingMedia.lenght}}</span>pending)
 				</div>
 				
+				<div class="flex space-x-2">
+					
+					<button
+						@click="currentFilter = 'pending'"
+						:class="{'bg-blue-500 text-white' : currentFilter === 'pending', 'bg-gray-200 text-gray-700' : currentFilter !== 'pending'}"
+						class="py-2 px-4 rounded-full text-sm font-semibold transition duration-150 hover:opacity-80"> Pending </button>
+				
+					<button
+						@click="currentFilter = 'watched'"
+						:class="{'bg-blue-500 text-white' : currentFilter === 'watched', 'bg-gray-200 text-gray-700' : currentFilter !== 'watched'}"
+						class="py-2 px-4 rounded-full text-sm font-semibold transition duration-150 hover:opacity-80"> Watched </button>
+				
+				</div>
+				
 			</div>
 		</div>
     </body>
