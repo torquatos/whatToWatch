@@ -154,6 +154,29 @@
 			</div>
 			
 			<!-- Media list -->
+			
+			<transition-group name="list" tag="url" class="space-y-4">
+				<li
+					v-for="media in filteredMedia"
+					:key="media.id"
+					:class="{'border-1-4 border-green-500' : media.isWatched,'border-l-4 border-red-500': !media.isWatched}"
+					class="bg-white p-5 rounded-xl shadow-md flex flex-col md:flex-row justify-between items-start md:items-center transition duration-300 hover:shadow-lg">
+					
+					<!--Media deatial-->
+					
+					<div class="flex-1 min-w-0 mb-3 md:mb-0 pr-4">
+						
+						<h3
+							:class="{'line-through text-gray-500' : media.isWatched}"
+							class="text-lg font-bold truncate text-gray-800">
+							
+							{{media.title}}
+							
+						</h3>
+						
+					</div>
+				</li>
+			</transition-group>
 		</div>
     </body>
 </html>
