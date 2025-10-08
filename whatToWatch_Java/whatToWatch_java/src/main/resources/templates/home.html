@@ -143,9 +143,17 @@
 						:class="{'bg-blue-500 text-white' : currentFilter === 'watched', 'bg-gray-200 text-gray-700' : currentFilter !== 'watched'}"
 						class="py-2 px-4 rounded-full text-sm font-semibold transition duration-150 hover:opacity-80"> Watched </button>
 				
+					<button
+						@click="currentFilter = 'all'"
+						:class="{'bg-blue-500 text-white' : currentFilter === 'all', 'bg-gray-200 text-gray-700' : currentFilter !== 'all'}"
+						class="py-2 px-4 rounded-full text-sm font-semibold transition duration-150 hover:opacity-80"> All </button>
+				
+				
 				</div>
 				
 			</div>
+			
+			<!-- Media list -->
 		</div>
     </body>
 </html>
