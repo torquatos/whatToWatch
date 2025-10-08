@@ -106,8 +106,31 @@
 						required
 						class="p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
 					
-				
+					<input
+						v-model="newMedia.isWatched"
+						type="checkbox"
+						placeholder="Media was already Watched"
+						required
+						class="p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+					
+					<button 
+						type="submit"
+						:disabled="isSubmitting"
+						class="bg-blue-600 text-white p-3 rounded-lg font-bold hover:bg-blue-700 transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+					>
+						{{isSubmitting ? 'Adding...' : 'Add Media'}}
+					</button>
 				</form>
+			</div>
+			<!-- Filters and counting -->
+			
+			<div class="flex flex-col sm:flex-row justify-between items-center bg-white p-4 rounded-xl shadow-md mb-6">
+				
+				<div class="mb-4 sm:mb-0 text-gray-700">
+					<span class="font-bold text-blue-600">{{ filteredMedia.length}}</span> Found Items
+					(<span class="font-bold text-red-500">{{pendingMedia.lenght}}</span>pending)
+				</div>
+				
 			</div>
 		</div>
     </body>
