@@ -67,14 +67,14 @@
 					<input
 						v-model="newMedia.category"
 						type="text"
-						placeholder="Media Category"
+						placeholder="Media Category (movie, anime...)"
 						required
 						class="p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
 					
 					<input
 						v-model="newMedia.genre"
 						type="text"
-						placeholder="Media Genre"
+						placeholder="Media Genre (drama, comedy...)"
 						required
 						class="p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
 					
@@ -82,6 +82,27 @@
 						v-model="newMedia.year"
 						type="number"
 						placeholder="Media Year"
+						required
+						class="p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+					
+					<input
+						v-model="newMedia.seasons"
+						type="number"
+						placeholder="Media Seasons"
+						required
+						class="p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+					
+					<input
+						v-model="newMedia.concluded"
+						type="checkbox"
+						placeholder="Media is concluded"
+						required
+						class="p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+					
+					<input
+						v-model="newMedia.whereToWatch"
+						type="text"
+						placeholder="Platform streaming the media"
 						required
 						class="p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
 					
