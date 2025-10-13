@@ -200,6 +200,14 @@
 							<span v-else>Check as Not Watched</span>
 						</button>
 						
+						<button
+							v-if="media.isWatched"
+							@click="toggleConcluded(media)"
+							:disabled="!media.isWatched"
+							:class="{'bg-purple-600 hover:bg-purple-700': !media.isConcluded, 'bg-gray-400 hover:bg-gray-500': media.isConcluded}"
+                        	class="text-white p-2 rounded-lg text-sm font-semibold transition duration-200 w-full sm:w-auto mt-1 disabled:opacity-70 disabled:cursor-not-allowed">
+							{{media.isWatched ? 'reset Conclusion' : 'Mark as Concluded'}}
+						</button>
 					</div>
 				</li>
 			</transition-group>
