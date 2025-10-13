@@ -189,7 +189,16 @@
 					</div>
 					
 					<!-- Actions of the system -->
-					<div>
+					<div class="flex space-x-2 flex-wrap justify-end">
+						
+						<button
+							@click="toggleWatched(media)"
+							:class="{'bg-green-500 hover:bg-green-600': !media.isWatched, 'bg-yellow-500 hover:bg-yellow-600': media.isWatched}"
+							class="text-white p-2 rounded-lg text-sm font-semibold transition duration-200 w-full sm:w-auto mt-1">
+							
+							<span v-if="!media.isWatched">Check as Watched</span>
+							<span v-else>Check as Not Watched</span>
+						</button>
 						
 					</div>
 				</li>
