@@ -162,7 +162,7 @@
 					:class="{'border-1-4 border-green-500' : media.isWatched,'border-l-4 border-red-500': !media.isWatched}"
 					class="bg-white p-5 rounded-xl shadow-md flex flex-col md:flex-row justify-between items-start md:items-center transition duration-300 hover:shadow-lg">
 					
-					<!--Media deatial-->
+					<!--Media details-->
 					
 					<div class="flex-1 min-w-0 mb-3 md:mb-0 pr-4">
 						
@@ -208,9 +208,26 @@
                         	class="text-white p-2 rounded-lg text-sm font-semibold transition duration-200 w-full sm:w-auto mt-1 disabled:opacity-70 disabled:cursor-not-allowed">
 							{{media.isWatched ? 'reset Conclusion' : 'Mark as Concluded'}}
 						</button>
+						
+						<button
+							@click="deleteMedia(media.id)"
+                        	class="bg-red-500 text-white p-2 rounded-lg font-semibold hover:bg-red-600 transition duration-200 w-full sm:w-auto mt-1">
+                        	
+                        	Delete
+							
+						</button>
 					</div>
 				</li>
 			</transition-group>
+			
+			<!-- Empty List Option -->
+			
+			<div v-if="error" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+				
+				<p class="text-xl text-gray-500">No media to be found within this video.</p>
+            	<p class="text-md text-gray-400 mt-2">Add an item or change the filter.</p>
+        
+			</div>
 		</div>
     </body>
 </html>
