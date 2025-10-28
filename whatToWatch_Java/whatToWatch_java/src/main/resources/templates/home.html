@@ -240,5 +240,27 @@
             </span>
         </div>
 		</div>
+		
+		<script>
+			
+			const API_BASE_URL = 'http://localhost:8080/api/media';
+
+   		 	const { createApp, ref, onMounted, computed } = Vue;
+
+    		const App = {
+        		setup() {
+            
+            		const mediaList = ref([]);
+            		const newMedia = ref({ title: '', category: '' });
+            		const currentFilter = ref('pending'); // 'pending', 'watched', 'all'
+            		const loading = ref(true);
+            		const isSubmitting = ref(false);
+            		const error = ref(null);	
+            
+            		const handleError = (err, operation) => {
+						console.error('Error while ${operation}:', err);
+						error.value = 'It was not possible ${operation}. verify if the API is in execution in ${API_BASE_URL}. Detail: ${err.message}';
+					}
+		</script>
     </body>
 </html>
