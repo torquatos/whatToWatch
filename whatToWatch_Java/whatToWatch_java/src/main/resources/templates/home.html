@@ -260,7 +260,24 @@
             		const handleError = (err, operation) => {
 						console.error('Error while ${operation}:', err);
 						error.value = 'It was not possible ${operation}. verify if the API is in execution in ${API_BASE_URL}. Detail: ${err.message}';
-					}
+					};
+					
+					const fetchMedia = async () => {
+						
+						loading.value = true;
+						error.value = null;
+						try {
+							const response = await fetch (API_BASE_URL);
+							if (!response.ok){
+								throw new Error('Status HTTP: ${response,status}');
+							}
+							mediaList.value = await response.json();
+						} catch (err) {
+							handleError(err, 'loading the list of medias');
+						} finally {
+							loading.value = false;
+						}
+					};
 		</script>
     </body>
 </html>
