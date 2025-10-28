@@ -222,12 +222,23 @@
 			
 			<!-- Empty List Option -->
 			
-			<div v-if="error" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+			<div v-if="filteredMedia.length === 0 && !loading" class="text-center p-10 bg-white rounded-xl shadow-lg mt-8">
 				
 				<p class="text-xl text-gray-500">No media to be found within this video.</p>
             	<p class="text-md text-gray-400 mt-2">Add an item or change the filter.</p>
         
 			</div>
+		</div>
+		
+		<div c>
+			
+			<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative max-w-sm" role="alert">
+            <strong class="font-bold">Error communicating to the API:</strong>
+            <span class="block sm:inline mt-2">{{ error }}</span>
+            <span class="absolute top-0 bottom-0 right-0 px-4 py-3" @click="error = null">
+                <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Fechar</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+            </span>
+        </div>
 		</div>
     </body>
 </html>
