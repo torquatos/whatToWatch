@@ -278,6 +278,16 @@
 							loading.value = false;
 						}
 					};
+					
+			const addMedia = async () => {
+				
+				if(!newMedia.value.title || !newMedia.value.category) return;
+				
+				isSubmitting.value = true;
+				error.value = null;
+				
+				
+			}
 		</script>
     </body>
 </html>
