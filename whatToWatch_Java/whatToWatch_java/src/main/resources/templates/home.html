@@ -309,10 +309,25 @@
 					
 					newMedia.value = { title: '', category: '' };
 				} catch (err) {
-					handleError()
+					handleError(err, 'add a new Item');
+				} finally {
+					isSubmitting.value = false;
 				}
 				
-				
+			};
+			
+			const updateMedia = async (media) => {
+				error.value = null;
+				try{
+					
+					const updatedMedia = { ...media }; 
+					
+					const response = await fetch(`${API_BASE_URL}/${media.id}`, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(updatedMedia)
+                    });
+				}
 			}
 		</script>
     </body>
