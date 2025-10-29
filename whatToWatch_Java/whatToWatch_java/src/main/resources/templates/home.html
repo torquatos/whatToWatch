@@ -294,7 +294,22 @@
 						isConcluded: false
 					};
 					
-					co
+					const response = await fetch(API_BASE_URL, {
+						method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+					});
+					
+					if (!response.ok){
+						throw new Error('Status HTTP: ${response.status}');
+					}
+					
+					const addedItem = await response.json();
+					mediaList.value.unshift(addedItem);
+					
+					newMedia.value = { title: '', category: '' };
+				} catch (err) {
+					handleError()
 				}
 				
 				
