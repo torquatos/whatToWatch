@@ -327,6 +327,16 @@
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(updatedMedia)
                     });
+                    
+                    if (!response.ok) {
+                        throw new Error(`Status HTTP: ${response.status}`);
+                    }
+                    
+                    const returnedMedia = await response.json();
+                    const index = mediaList.value.findIndex(m => m.id === returnedMedia.id);
+                    if (index !== -1) {
+                         mediaList.value[index] = returnedMedia;
+                    }
 				}
 			}
 		</script>
