@@ -352,6 +352,14 @@
                 }
                 updateMedia(media);
 			};
+			
+			const toggleConcluded = (media) => {
+				
+				if (!media.isWatched) return;
+				
+				media.isConcluded = !media.isConcluded;
+				updateMedia(media);
+			};
 		</script>
     </body>
 </html>
