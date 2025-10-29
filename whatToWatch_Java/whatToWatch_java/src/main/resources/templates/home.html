@@ -337,6 +337,10 @@
                     if (index !== -1) {
                          mediaList.value[index] = returnedMedia;
                     }
+				} catch (err) {
+					handleError(err, 'update the status of the item');
+					await fetchMedia();
+					
 				}
 			}
 		</script>
