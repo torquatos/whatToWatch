@@ -343,7 +343,15 @@
 				}
 			};
 			
-			const toggleWatched = (media) => {}
+			const toggleWatched = (media) => {
+				
+				media.isWatched = !media.isWatched;
+				
+				if (!media.isWatched) {
+                    media.isConcluded = false;
+                }
+                updateMedia(media);
+			};
 		</script>
     </body>
 </html>
