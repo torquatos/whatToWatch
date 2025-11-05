@@ -370,8 +370,17 @@
 					const response = await fetch(`${API_BASE_URL}/${id}`, {
 						method: 'DELETE'
 					});
+					
+					if (!response.ok){
+						throw new Error(`Status HTTP: ${response.status}`);
+					}
+					
+					mediaList.value= mediaList.value.filter(m => m.id !== id);
+					
+				} catch (err) {
+					handleError(err, 'delete item');
 				}
-			}
+			};
 			
 		</script>
     </body>
