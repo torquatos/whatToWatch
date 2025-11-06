@@ -382,6 +382,20 @@
 				}
 			};
 			
+			const filteredMedia = computed(() => {
+				const sortedList = mediaList.value.slice().sort((a, b) =>b.id - a.id);
+				
+				if (currentFilter === 'all'){
+					return sortedList;
+				}
+				
+				if (currentFilter.value === 'watched'){
+					return sortedList.filter(media => media.isWatched);
+				}
+				
+				return sortedList.filter(media => !media.isWatched);
+			});
+			
 		</script>
     </body>
     
