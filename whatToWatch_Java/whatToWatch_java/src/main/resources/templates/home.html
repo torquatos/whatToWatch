@@ -396,6 +396,16 @@
 				return sortedList.filter(media => !media.isWatched);
 			});
 			
+			const pendingMedia = computed(() => {
+				return mediaList.value.filter(media => !media.isWatched);
+			});
+			
+			// --- Life Cycling ---
+			
+			onMounted(()=>{
+				fetchMedia();
+			});
+			
 		</script>
     </body>
     
